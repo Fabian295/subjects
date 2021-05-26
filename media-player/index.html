@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .wrapper{
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            background-image:linear-gradient(45deg, purple, violet, rebeccapurple, lime, green, orange, orangered, blue, cornflowerblue, aqua) ;
+        }
+        .img-container {
+            width: 100px;
+            height: 100px;
+           position: absolute;
+        }
+        img {
+            width: inherit;
+            height: inherit;
+            bottom: 10rem;
+        }
+        .mp-title {
+            color: white;
+            font-size: 3rem;
+            text-transform: uppercase;
+        } 
+        .mp-player {
+            display: flex;
+            height: 30rem;
+            width: 40rem;
+            background-color: #555;
+            align-items: flex-end;
+            position: relative;
+            border-radius: 20px;
+        }
+        .showcase {
+            background-color: #333;
+            width: 30rem;
+            height: 25rem;
+            position: absolute;
+            top: 0;
+            left: 5rem;
+        }
+        .control {
+            align-items: flex-end;
+            justify-items: center;
+            align-self: flex-end;
+            /* position: relative; */
+            /* top: 13rem;
+            left: -2.5rem; */
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <title>Media Player</title>
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="mp-title">FK Media Player</h1>
+        <div class="mp-player">
+            <div class="showcase">
+                <div class="img-container">
+                    <img src="./u2.jpg" alt="image">
+                </div>
+            </div>
+            <div class="progress">
+                <div class="time"></div>
+            </div>
+            <div class="control">
+
+                <audio src="./I Still Haven't Found What I'm Looking For-F7wit8_8SqA.mp3"  contextmenu="" > </audio>
+                <i  class="far  5x fa-play-circle " ></i>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

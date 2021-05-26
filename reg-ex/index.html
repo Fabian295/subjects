@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            margin: 100px auto;
+            width: 900px;
+        }
+
+        p {
+            color: #999;
+            font-weight: 300;
+            font-size: 1rem;
+            text-transform: lowercase;
+            line-height: 1.9rem;
+            margin-bottom: 3rem;
+        }
+
+        input {
+            min-width: 20rem;
+            border: none;
+            background: #eeeeee;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 1rem;
+            border-radius: 4px;
+            margin-right: 1rem;
+            min-height: 3.5rem;
+            color: #212121;
+        }
+
+        button {
+            border: none;
+            background: #8125e2;
+            color: #fff;
+            font-weight: 700;
+            padding: 1rem;
+            min-height: 3.5rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
+    <title>HighLght Search</title>
+</head>
+<body>
+    <div class="container">
+        <p id="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea perspiciatis enim provident non odit sapiente obcaecati fugit repellendus sit labore similique, laborum nam dolorem. Dolore cumque, non saepe commodi repellendus animi nobis praesentium voluptate et hic tempore tempora excepturi dicta labore perferendis perspiciatis natus libero ea nihil accusantium esse. Hallo ik ben een man die woont  in een land in Europa. Culpa sed nam ut atque dicta enim accusantium sunt ad tempore esse labore, distinctio perspiciatis reprehenderit consequuntur, rerum, facilis at tempora temporibus totam corrupti repudiandae reiciendis repellat nostrum libero! Quam,  Hallo ik ben een man die woont  in een land in Europa,repellendus sit unde esse, eius laboriosam alias, placeat illo possimus sapiente odio facere similique mollitia! Magnam eius exercitationem autem ipsum fuga! Hallo ik ben een man die woont  in een land in Europa.</p>
+
+        <input type="text" id="input" placeholder="word to  find and highlight">
+        <button id="button">Highlight</button>
+    </div>
+
+
+
+
+    <script>
+        const text = document.getElementById('text');
+        const originalText = text.innerHTML;
+        const input = document.getElementById('input');
+        const button = document.getElementById('button');
+
+
+
+        function highlightword() {
+            if(input.value) {
+                const word = input.value.trim();
+                // word.toLowerCase();
+                const regexp = new RegExp(word, 'ig')
+                // text.toLowerCase();
+                text.innerHTML = originalText.replace(regexp, `<mark>${word}</mark>`);
+            }
+        }
+
+        button.addEventListener('click', highlightword)
+    </script>
+</body>
+</html>

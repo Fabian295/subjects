@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .grand-p {
+            background-color: red;
+            color: #fff;
+            width: 60vw;
+            min-height: 60vh;
+            margin: 5rem auto;
+            text-align: center;
+            font-size: 1.8rem;
+        }
+
+        .parent {
+            background-color: green;
+            width: 40vw;
+            height: 40vh;
+            margin: 5rem auto;
+
+        }
+
+        .child {
+            background-color: blue;
+            width: 20vw;
+            height: 20vh;
+            margin: 5rem auto;
+
+        }
+        .box {
+            color: white;
+            background-color: rgb(104, 24, 124);
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="colors"></div>
+        <div class="grand-p" id="gpt">Grand Parent
+            <div class="parent" id="parent">Parent
+                <div class="child" id="child"> Child </div>
+
+               
+            </div>
+        </div>
+        <div>
+            
+
+    <script>
+        document.addEventListener('DOMContentLoaded', init);
+       
+       function init() { 
+           const gpt =document.getElementById('gpt');
+        const parent =document.getElementById('parent');
+        const child =document.getElementById('child');
+
+
+ 
+
+        const clicker = (ev) => {
+            let div = document.createElement('div');
+            div.innerHTML = `\nThis is Grand Parent`
+            document.body.appendChild(div);
+            console.log(ev.target);
+            console.log('clicked by grand-parent, current: ',ev.currentTarget);
+
+        }
+        gpt.addEventListener('click', clicker);
+
+        const parentClicker = (ev) => {
+            let div = document.createElement('div');
+            div.innerHTML = `\nThis is Parent`
+            document.body.appendChild(div);
+            console.log(ev.target);
+            console.log('clicked by parent, current: ',ev.currentTarget);
+
+        }
+        parent.addEventListener('click', parentClicker);
+        const childClicker = (ev) => {  
+            let div = document.createElement('div');
+            div.innerHTML = `This is child`;
+            document.body.appendChild(div);
+            console.log('clicked by child, current: ', ev.currentTarget);
+        }
+        child.addEventListener('click', childClicker);      
+    
+    }
+
+
+
+
+    </script>
+</body>
+</html>

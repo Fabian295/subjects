@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .t-block {
+            width: 600px;
+            height: auto;
+            border: 2px solid orangered;
+            padding: 30px;
+            line-height: 1.4;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<p>Click the button to do a global search for word characters in a string.</p>
+<p>"Give 100%!"</p>
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<div class="search">
+    <h1>Text Search</h1>
+    <p class="t-block" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam optio cupiditate, quae a corporis doloremque numquam, commodi atque voluptate, quaerat quis rem sed vel obcaecati magnam reiciendis hic consequuntur animi? Odit possimus vitae expedita ex harum, fugiat aliquid tenetur a provident, iste necessitatibus ullam similique esse! Eaque officiis sint molestiae! <br />
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam optio cupiditate, quae a corporis doloremque numquam, commodi atque voluptate, quaerat quis rem sed vel obcaecati magnam reiciendis hic consequuntur animi? Odit possimus vitae expedita ex harum, fugiat aliquid tenetur a provident, iste necessitatibus ullam similique esse! Eaque officiis sint molestiae!
+    Hallo ik ben een man die woont  in een land in Europa.
+    </p>
+    <input type="text"  value="" placeholder="type your text...">
+    <br/>
+    <br />
+    <button onclick="searchText(tt)">Click Search</button>
+</div>
+
+<script>
+function myFunction() {
+  var str = "Give 100%!"; 
+  var patt1 = /\w/g;
+  var result = str.match(patt1);
+  document.getElementById("demo").innerHTML = result;
+}
+
+let input = document.querySelector('input');
+let text;
+console.log('tekst: ', text)
+const tBlock = document.querySelector('.t-block');
+let s = tBlock.textContent.toString();
+console.log(s);
+input.addEventListener('input', handleChange);
+const btn = document.querySelector('button');
+btn.addEventListener('click', searchText);
+
+let t = document.querySelector('input[value]');
+// console.log(t)
+
+function handleChange(e) {
+    // console.log(e.target);
+    let val=e.target.value;
+    val.toLocaleLowerCase();
+    console.log(val);
+    if(!val) return;
+    s.match(val)? console.log(true)  : console.log(false);
+    if(true) {
+        text=val;
+    }
+    console.log(text)}
+
+let tt = text;
+console.log(t);
+let sub;
+// console.log(tt);
+// if(){}
+// value=e.target.value;
+function searchText(tt) {
+    console.log(s);
+    let v = input.value;
+    let vt = v.toString();
+    console.log(v);
+    let len = v.length;
+    let tes = /[/vt/]/g.test(s);
+    let r = /vt/;
+    console.log(vt);
+    console.log(tes);
+    console.log(r);
+    if(tes===true) {
+    //     let rex = /r/g;
+    //    let pos = s.search(rex);
+    //    console.log(pos);
+
+    let indy = s.indexOf(vt);
+    console.log(indy);
+    let sub = s.substring(indy, indy + len);
+    console.log(sub);
+    // let res = text.match(rex);
+    let div= document.createElement('div');
+    div.textContent=len;
+    // console.log(res);
+    document.body.append(div);
+    let div2= document.createElement('div');
+    div2.textContent=v;
+    document.body.append(div2);
+    
+}else {
+    console.log('No match found');
+}
+// rex = new RegExp();
+sub.style.color="blue";
+
+    input.value="";
+}
+
+</script>
+
+</body>
+</html>

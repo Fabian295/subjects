@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .wrapper {
+            display: flex;
+            /* margin-top: 20px; */
+        }
+        .standard-box {
+            display: flex;
+            /* width: 100px;
+            height: 100px; */
+            /* flex: 1 0 100px; */
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        div.box-div {
+            width: 100%;
+            height: 100%;
+            margin-bottom: -40px;
+        }
+     
+
+        .box {
+            display: flex;
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+            justify-content: center;
+            align-items: center;
+            /* margin-bottom: 20px; */
+            box-sizing: border-box;
+        }
+    </style>
+
+    <title>Box Animations</title>
+</head>
+<body>
+    <h1>CodeCubes</h1>
+    <div class="standard-box">
+
+        <div class="wrapper">
+
+        </div>
+
+    </div>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', init);
+    
+    let amt = 50;
+    const wrapper = document.querySelector('.wrapper');
+    wrapper.onclick( ()=>{
+        console.log('clicky')
+        goDiv()
+    });
+
+
+
+    function init() {
+
+    for(i = 0; i < amt; i++){
+
+    let div = document.createElement('div');
+    div.id=i+1;
+    div.innerHTML = `This is ${div.id}`;
+    div.style.color="purple";
+    div.classList.add('box');
+    div.style.backgroundColor="lime";
+    div.style.color="white";
+    div.style.height="100px";
+    div.style.width="100px";
+    console.log(i);
+    wrapper.style.display="flex";
+    div.style.justifyContent="center";
+    div.style.alignItems="center";
+    wrapper.style.gap="20px";
+    wrapper.style.flexWrap="wrap";
+    wrapper.appendChild(div);
+    
+    function goDiv() {
+        setTimeout(() => {
+            div.style.backgroundColor="orange";
+            div.style.transition="all 0.6s ease"
+            
+        }, 1000);
+        setTimeout(() => {
+            div.style.backgroundColor="black";
+        }, 2000);
+        setTimeout(() => {
+            div.style.backgroundColor="blue";
+        }, 3000);
+        setTimeout(() => {
+            div.style.backgroundColor="pink";
+            
+            div.style.transform="rotate(360deg)";
+        }, 4000);
+
+        setTimeout(() => {
+            div.style.backgroundColor="blue";
+            div.style.borderRadius="50%";
+            div.style.border="4px solid black";
+        }, 5000);
+
+        setTimeout(() => {
+            div.style.backgroundColor="goldenrod";
+            div.style.borderRadius="10px";
+        }, 5900);
+        
+        
+        setTimeout(() => {
+            div.style.width="100px";
+            div.style.height="100px";
+            div.style.transform="rotate(180deg)";
+            div.style.backgroundColor="coral";
+        }, 6000);
+        
+        setTimeout(() => {
+            div.style.borderRadius="0px";
+            div.style.transform="rotate(360deg)";
+            div.style.backgroundColor="cornflowerblue";
+            div.style.border="none";
+            // div.style.transform="scale(0.8)";
+            
+            // div.style.margin="-20px";
+        }, 7000);
+    }
+    
+    goDiv();
+};
+let x = 10;
+let y = 20;
+let res = eval('x * y' ) + '<br>';
+console.log(res);
+document.body.append(res);
+
+    
+}
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #222;
+    height: 100vh;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    display: grid;
+    place-items: center;
+}
+
+
+.card {
+    width: 400px;
+    position: relative;
+}
+
+
+.card__content {
+    text-align: center;
+    position: relative;
+    padding: 5em;
+    background-color: red;
+    transition: transform 3s;
+    transform-style: preserve-3d;
+} 
+
+.card__b_body {
+    position: relative;
+    padding: 2.5em;
+    transform: transformZ(6rem) ;
+}
+
+.card:hover .card__content {
+    transform: rotateY(.5turn);
+}
+.card__front,
+.card__back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    /* 
+    background-color: red; */
+    /* padding: 10em  5em; */
+}
+
+
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./main.css">
+    <title>Parts of the URL</title>
+    <script type="text/javascript" nonce="1643f1c7a82a4afa81650e0551b" src="//local.adguard.org?ts=1621261049711&amp;type=content-script&amp;dmn=prof3ssorst3v3.github.io&amp;app=com.google.Chrome.helper&amp;css=1&amp;js=1&amp;gcss=1&amp;rel=1&amp;rji=1&amp;sbe=0"></script>
+<script type="text/javascript" nonce="1643f1c7a82a4afa81650e0551b" src="//local.adguard.org?ts=1621261049711&amp;name=AdGuard%20Extra&amp;type=user-script"></script><link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+    <section class="output">
+        <span class="protocol"></span>
+        <span class="colon">://</span>
+        <span class="user" data-suffix="@"></span>
+        <span class="subdomain"></span>.
+        <span class="domain"></span>.
+        <span class="superdomain"></span>
+        <span class="path" data-prefix="/"></span>
+        <span class="file" data-prefix="/"></span>
+        <span class="query" data-prefix="?"></span>
+        <span class="hash" data-prefix="#"></span>
+    </section>
+    <section class="info">
+        <p>Please note. The correct order is what is indicated above. The Query String comes first, followed by the Fragment.</p>
+    </section>
+    <section class="inputs">
+        <p><label for="protocol">Protocol</label>
+        <input type="text" id="protocol" value="https"></p>
+        <p><label for="user">Username</label>
+        <input type="text" id="user" value="bob" /></p>
+        <p><label for="subdomain">Sub-Domain</label>
+        <input type="text" id="subdomain" value="www" /></p>
+        <p><label for="domain">Domain</label>
+        <input type="text" id="domain" value="example" /></p>
+        <p><label for="superdomain">Super-Domain</label>
+        <input type="text" id="superdomain" value="com" /></p>
+        <p><label for="path">Path</label>
+        <input type="text" id="path" value="folder/path" /></p>
+        <p><label for="file">File</label>
+        <input type="text" id="file" value="index.html" /></p>
+        <p><label for="hash">Hash</label>
+        <input type="text" id="hash" value="main" /></p>
+        <p><label for="query">Querystring</label>
+        <input type="text" id="query" value="name=value" /></p>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>

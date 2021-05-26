@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=Timing, initial-scale=1.0">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .wrapper {
+            display: flex;
+            /* margin-top: 20px; */
+        }
+        .standard-box {
+            display: flex;
+            /* width: 100px;
+            height: 100px; */
+            /* flex: 1 0 100px; */
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        div.box-div {
+            width: 100%;
+            height: 100%;
+            margin-bottom: -40px;
+        }
+     
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+            /* margin-bottom: 20px; */
+            box-sizing: border-box;
+        }
+    </style>
+    <title>Timing animations</title>
+</head>
+<body>
+    <div class="standard-box">
+        <div class="box">
+
+            <p class="box-par">WE</p> 
+        </div>
+        <div class="box ">
+
+             <p class="box-par">ARE</p> 
+        </div>
+        <div class="box ">
+
+            <p class="box-par">HAVING</p> 
+        </div>
+        <div class="box ">
+
+        <p class="box-par">BIG BIG</p> 
+        </div>
+        <div class="box ">
+
+           <p class="box-par">BIG FUN!!!!</p>
+        </div>
+    </div>
+    
+    <div class="wrapper">
+
+    </div>
+    <script>
+    const wrapper = document.querySelector('.wrapper');
+
+
+    document.addEventListener('DOMContentLoaded', init);
+
+    // amount of div's / .box / squares
+    let amt = 50;   //give any amount(value of amt) you want 
+
+
+    function init() {
+
+        for(i = 0; i < amt; i++){
+
+        let div = document.createElement('div');
+        div.innerHTML = `This is child`;
+        div.style.color="purple";
+        div.style.backgroundColor="lime";
+        div.style.color="white";
+        div.style.height="100px";
+        div.style.width="100px";
+        console.log(i);
+        wrapper.style.display="flex";
+        wrapper.style.gap="20px";
+        wrapper.style.flexWrap="wrap";
+        wrapper.appendChild(div);
+   
+
+        function goDiv() {
+        setTimeout(() => {
+            div.style.backgroundColor="orange";
+            div.style.transition="all 0.6s ease"
+
+        }, 1000);
+        setTimeout(() => {
+            div.style.backgroundColor="black";
+        }, 2000);
+        setTimeout(() => {
+            div.style.backgroundColor="blue";
+        }, 3000);
+        setTimeout(() => {
+            div.style.backgroundColor="pink";
+
+            div.style.transform="rotate(360deg)";
+        }, 4000);
+        setTimeout(() => {
+            div.style.backgroundColor="lime";
+            div.style.borderRadius="50%";
+            div.style.width="125px";
+            div.style.height="125px";
+        }, 5500);
+        setTimeout(() => {
+            div.style.backgroundColor=" rebeccapurple";
+            div.style.border="4px solid red";
+        }, 6500);
+        setTimeout(() => {
+            div.style.backgroundColor="goldenrod";
+            // div.style.width="150px";
+            // div.style.height="150px";
+            div.style.borderRadius="0px";
+            div.style.border="4px solid black";
+
+        }, 8000);
+        setTimeout(() => {
+            div.style.backgroundColor=" magenta";
+            div.style.border="none";
+        }, 9000);
+        setTimeout(() => {
+            div.style.backgroundColor="lightblue";
+            div.style.transition="transform 0.6s ease"
+        }, 10000);
+        setTimeout(() => {
+            div.style.backgroundColor="gold";
+        }, 16000);
+        setTimeout(() => {
+            div.style.backgroundColor="darkred";
+        }, 12000);
+        setTimeout(() => {
+            div.style.backgroundColor="cornflowerblue";
+        }, 13000);
+        // div.style.transition="all 0.9s ease";
+        // console.log(ev.target);
+        setTimeout(() => {
+            div.style.backgroundColor="#bada55";
+            // div.style.transform="scale(0.8)"; 
+            // div.style.margin="-20px";
+        }, 14000);
+        setTimeout(() => {
+            div.style.backgroundColor="cornflowerblue";
+        }, 15000);
+        setTimeout(() => {
+            div.style.backgroundColor="rebeccapurple";
+            // div.style.transform="rotate(360deg)";
+            // div.style.transition="all 0.9s ease";
+        }, 15500);
+        setTimeout(() => {
+            div.style.backgroundColor="pink";
+        }, 16500);  
+        setTimeout(() => {
+            div.style.backgroundColor="lime";
+        }, 17500);
+        setTimeout(() => {
+            div.style.width="100px";
+            div.style.height="100px";
+            div.style.transform="rotate(180deg)";
+            div.style.backgroundColor="coral";
+        }, 18500);
+        
+        setTimeout(() => {
+            div.style.transform="rotate(360deg)";
+            div.style.backgroundColor="cornflowerblue";
+            // div.style.transform="scale(0.8)";
+
+            // div.style.margin="-20px";
+        }, 19500);
+
+    };
+    goDiv();
+    }
+};
+    </script>
+</body>
+</html>
